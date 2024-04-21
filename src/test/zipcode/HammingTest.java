@@ -17,11 +17,10 @@ public class HammingTest {
     @Test
     public void testNoDistanceBetweenEmptyStrands()
     {
-        Hamming h = new Hamming("", "");
-        int actual = h.getHammingDistance();
-        Assert.assertEquals(0, actual);
-
-        //assertEquals(0, new Hamming("", "").getHammingDistance());
+//        Hamming h = new Hamming("", "");
+//        int actual = h.getHammingDistance();
+//        Assert.assertEquals(0, actual);
+        assertEquals(0, new Hamming("", "").getHammingDistance());
     }
 
     @Test
@@ -89,7 +88,7 @@ public class HammingTest {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("leftStrand and rightStrand must be of equal length.");
 
-        new Hamming("AATG", "AAA");
+        new Hamming("AATG", "AAA").getHammingDistance();
     }
 
     @Test
@@ -97,7 +96,7 @@ public class HammingTest {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("leftStrand and rightStrand must be of equal length.");
 
-        new Hamming("ATA", "AGTG");
+        new Hamming("ATA", "AGTG").getHammingDistance();
     }
 
 }
